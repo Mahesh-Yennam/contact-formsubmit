@@ -26,10 +26,11 @@ document
     })
       .then((response) => {
         if (response.ok) {
-          // Success response
+          // SUCCESS: Write text, change class, AND show it!
           statusMsg.textContent =
             "Thank you! Your message has been sent successfully.";
           statusMsg.className = "status-message success";
+          statusMsg.style.display = "block"; // <--- FIX IS HERE
           form.reset(); // Clear form fields
         } else {
           // Server error response
@@ -37,10 +38,11 @@ document
         }
       })
       .catch((error) => {
-        // Network error response
+        // ERROR: Write text, change class, AND show it!
         statusMsg.textContent =
           "Oops! There was a problem submitting your form. Please try again.";
         statusMsg.className = "status-message error";
+        statusMsg.style.display = "block"; // <--- FIX IS HERE
       })
       .finally(() => {
         // 4. Reset button state
